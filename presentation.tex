@@ -49,12 +49,18 @@
     \end{itemize}
 \end{frame}
 
+\AtBeginSection[]
+    {
+        \begin{frame}
+            \tableofcontents[currentsection]
+        \end{frame}
+    }
 \section[Motivation]{Why should we care?}
 
 \begin{frame}
     \frametitle{My computer is fine}
     \begin{itemize}
-        \item you're running Mac or Windows
+        \item you're running Mac or Windows, called your Host 
         \item games, music, video, pictures, web
         \item<2-> what if you want to run something more complex?
             \begin{itemize}
@@ -63,6 +69,139 @@
                 \item<3-> break system, reinstall
             \end{itemize}
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{You wouldn't do lab work at home}
+    \begin{itemize}
+        \item experimenting on your Host will cause you headaches
+        \item save time with fully isolated environments
+        \item turn a bit of our home into a lab safely, cleanly, securely
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What can we do in a VM?}
+    \begin{itemize}
+        \item save money, resources, fully utilize hardware
+        \item test multiple OS simultaneously, no restart
+        \item protect your Host from unverified programs
+        \item backup with the click of a button
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Do I have to use a VM?}
+    \begin{itemize}
+        \item get new hardware
+            \begin{itemize}
+                \item impractical
+                \item expensive
+                \item good luck maintaining
+            \end{itemize}
+        \item dual boot
+            \begin{itemize}
+                \item reboot to switch
+                \item usual maintenance tasks
+                \item partition hard drive
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{They're already around us}
+    \begin{itemize}
+        \item Hegele lab uses virtualized servers
+            \begin{itemize}
+                \item process LipidSeq data
+                \item NextSeq analysis 
+            \end{itemize}
+        \item some of our desktops too
+    \end{itemize}
+\end{frame}
+
+\section[Basics]{What are Virtual Machines?}
+
+\begin{frame}
+    \frametitle{What are Machines?}
+    \begin{itemize}
+        \item computing devices composed of four core pieces
+            \begin{description}[CPU]
+                \item[CPU] the central processing unit performs all computational tasks
+                \item[RAM] random access memory provides data storage that is readily accessible
+                \item[Storage] HDD or SSD for permanent data storage
+                \item[Network] to communicate with other computing devices
+            \end{description}
+        \item OS saved on Storage, loaded into RAM on boot, interacts with CPU directly
+        \item "bare metal"
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What is Virtual?}
+    \begin{itemize}
+        \item "not physically existing as such but made by software to appear so"
+        \item OS will not directly interact with hardware
+        \item hardware virtualization
+            \begin{itemize}
+                \item Guest OS acts like interacting with real hardware
+                \item hypervisor "fakes" it, safe instructions executed directly on CPU, privileged requests translated and taken care of by hypervisor 
+                \item this is "full" hardware virtualization
+            \end{itemize}
+        \item hardware-assisted virtualization
+            \begin{itemize}
+                \item Intel VT-x or AMD-V
+                \item Guest can execute privileged instructions, CPU has built in functions to help hypervisor handle these
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section[Hands On]{How can I get started?}
+
+\begin{frame}
+    \frametitle{Is my computer capable?}
+    \begin{itemize}
+        \item check if cpu supports virtualization
+        \item how many cores do you have?
+        \item do you have sufficient hard disk space?
+        \item how much ram can you allocate?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{How do I do it?}
+    \begin{itemize}
+        \item many virtualization softwares available
+            \begin{itemize}
+                \item Parallels
+                \item VMWare
+                \item VirtualBox
+            \end{itemize}
+        \item VirtualBox is very popular, free, and available on most OS
+        \item many operating systems available
+            \begin{itemize}
+                \item Ubuntu, Kubuntu, Lubuntu
+                \item Windows or Mac if you have install disks
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section[Summary]{Summary}
+
+\begin{frame}
+    \frametitle{Could you repeat that?}
+    \begin{itemize}
+        \item simplify your life
+        \item protect your Host
+        \item liberate your resources
+        \item doorway tool and skill
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        Thank You
+    \end{center}
 \end{frame}
 
 \end{document}
